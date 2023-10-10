@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusiVerse-Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <h1></h1><br>
+    <div class="wrapper">
+        <form onsubmit="gotoDashboard(event)">
+            <h2><i class='bx bxs-music'></i>MusiVerse Login</h2>
+            <div class="input-field">
+                <input type="text" required>
+                <label>Enter your email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" required>
+                <label>Enter your password</label>
+            </div>
+            <button type="submit">Log In</button>
+            <div class="register">
+            </div>
+        </form>
+    </div>
+    <script>
+        function gotoDashboard(event) {
+          event.preventDefault();
+          var userNameInput = document.querySelector('input[type="text"]').value;
+          var passwordInput = document.querySelector('input[type="password"]').value;
+          var correctUserName = "music@gmail.com";
+          var correctPassword = "music";
+          if (userNameInput === correctUserName && passwordInput === correctPassword) {
+            window.location.href = "index.html";
+          } else {
+            alert("Invalid username or password. Please try again.");
+          }
+        }
+      </script>
+</body>
+</html>
